@@ -29,7 +29,7 @@ const HomeHeader = (props) => {
        <Button
         transparent
         onPress={() => navigation.navigate("DrawerOpen")}>
-        <Thumbnail source={require('../assets/images/har.jpg')} small/>
+        <Thumbnail source={require('../assets/har.jpg.jpg')} small/>
     </Button>
     </Left>
    {body}

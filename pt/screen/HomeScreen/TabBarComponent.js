@@ -7,7 +7,7 @@ import {  Content,Header,Left,Body,Icon, Image,Right,Button,Title} from 'native-
 
 // custom tabbar component created to show separate headers for the tabs based on tab selected
 class TabBarComponent extends React.Component {
-  
+
 
 //renders the header based on tab selected
 render () {
@@ -21,8 +21,8 @@ render () {
     console.log(this.props);
     const {routes} = navigation.state;
     console.log(routes);
-  
-  
+
+
     //check for state and update header
     let header=null;
     let currentIndex=navigation.state.index;
@@ -37,28 +37,28 @@ render () {
     header=<TabHeader navigation={navigation} tabKey = {currentKey} />;
 
     return (
-      
+
     <View>
-      
-      
+
+
      {/* show the header as initialized by tab pressing */}
      {header}
-    
-  
+
+
     <View style={styles.tabbar}>
         {/* Maps through all the routes and shows the tabs for each route as mentioned in the tab navigator */}
         {routes && routes.map((route, index) => {
           const focused = index === navigation.state.index;
           const tintColor = focused ? activeTintColor : inactiveTintColor;
          const tabKey = route.key;
-         
+
           return (
-            
-            // show buttons for tabs 
+
+            // show buttons for tabs
             <TouchableNativeFeedback
               key={route.key}
               style={styles.tab}
-              
+
               // on pressing of tabs route to that screen and also update state when search tab pressed
               onPress={()=>{jumpToIndex(index); }}
               background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}>
@@ -76,7 +76,7 @@ render () {
         })}
 
       </View>
-    
+
        </View>
     )
 }
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      
+
     },
     // icon:
     // {
