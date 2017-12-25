@@ -1,0 +1,50 @@
+
+
+ import React, { Component } from 'react';
+// import { Tabs } from './router.js';
+//
+// class App extends Component {
+//   render() {
+//     return <Tabs />;
+//   }
+// }
+//
+// export default App;
+
+import {Text} from 'react-native';
+import { TabNavigator , StackNavigator } from "react-navigation";
+import {Icon} from 'native-base';
+//importing TabNavigator Component
+
+//creating Component for Recent Chats
+class RecentChatsScreen extends Component {
+  render() {
+    return (
+      <Icon name='home' />
+    );
+  }
+}
+
+//creating Component for All contacts
+class AllContactsScreen extends Component {
+  render() {
+    return <Text>List of all contacts</Text>
+  }
+}
+
+//A classless
+const MainScreenNavigator = TabNavigator({
+    <Icon name='home' />: { screen: RecentChatsScreen },
+  All: { screen: AllContactsScreen },
+});
+
+const SimpleApp = StackNavigator({
+  Home: {screen : MainScreenNavigator,
+        navigationOptions: {
+          title :'Home'
+        }
+      },
+  Chat: {screen: MainScreenNavigator }
+});
+
+export default SimpleApp;

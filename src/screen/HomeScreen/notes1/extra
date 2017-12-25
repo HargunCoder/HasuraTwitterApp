@@ -1,0 +1,26 @@
+import React, { Component } from "react";
+//Add HomeScreen
+import HomeScreen from "./HomeScreen.js";
+//importing Profile from ProfileScreen
+import Profile from "../ProfileScreen/Profile";
+//importing messages ,notifications,and search
+import SearchTab from "./SearchTab";
+import Notifications from "./Notifications";
+import Messages from "./Messages";
+
+//Download the navigation Components
+import { TabNavigator , StackNavigator ,DrawerNavigator} from "react-navigation";
+import {ScrollView ,Text } from 'react-native';
+//creating TabBarComponent for styling
+import TabBarComponent from './TabBarComponent';
+
+//custom sidebar
+//import Sidebar from "../Sidebar/Sidebar.js";
+//The tab bar Component
+//import TabBarComponent from './TabBarComponent';
+
+//TabNavigator with all our screens
+//using classless compoenent as prop not needed
+
+//Creating tab navigator for menu TabBarComponent
+//using classless components

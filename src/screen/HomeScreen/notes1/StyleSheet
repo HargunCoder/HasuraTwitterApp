@@ -1,0 +1,60 @@
+StyleSheet:
+https://facebook.github.io/react-native/docs/stylesheet.html
+
+ StyleSheet is an abstraction similar to CSS StyleSheets
+ Create a new StyleSheet:
+
+ const styles = StyleSheet.create({
+  container: {
+    borderRadius: 4,
+    borderWidth: 0.5,
+    borderColor: '#d6d7da',
+  },
+  title: {
+    fontSize: 19,
+    fontWeight: 'bold',
+  },
+  activeTitle: {
+    color: 'red',
+  },
+});
+
+Use a StyleSheet:
+
+<View style={styles.container}>
+  <Text style={[styles.title, this.props.isActive && styles.activeTitle]} />
+</View>
+
+Advantage:
+-Code easier to understand by moving away from rendern function
+-we can refer style easily by id insted of creating a new style object every time
+-style only once through the bridge all subsequent used are going to refer id
+
+Methods: Has two methods
+1)  setStyleAttributPreProcessor  (Last Option Use)
+Sets a function to use to pre-process a style property value.
+This is used internally to process color and transform values.
+2) create ()
+  static create(obj)
+  Creates a StyleSheet style reference from given object
+
+Properties :
+  hairlineWidth
+  absoluteFill
+  absoluteFillObject
+  flatten
+
+https://medium.com/the-react-native-log/intro-to-styling-in-react-native-c2c942bf1306
+The StyleSheet API is pretty straight forward,
+we use the create and hairlineWidth the most
+-You use create to put together an object that you can use to apply styling to your components
+-If you’re familiar with CSS then the syntax is a bit different. For example: border-radius on the web is borderRadius in this api. I’ve found that basically anything that uses a “-” in it becomes camel cased.
+
+There is also a useful property that allows you make a thin line that’s specific to that device. It’s good for borders.
+
+const styles = StyleSheet.create({
+  divider: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+  },
+});
