@@ -18,7 +18,7 @@ Project Dependencies:
 
 Running on a device
 
-1) Clone the repository or download it.
+1)Clone the repository or download it.
 for terminal use the command
 git clone
 
